@@ -27,11 +27,11 @@ for i in range(iterations):
 ax1.set_xlim(2.5, 4)
 ax1.set_title("Bifurcation diagram")
 ax1.set_xlabel('r')
-ax1.set_ylabel('Equilibrium Population')
-ax2.set_title("Population")
+ax1.set_ylabel('Equilibrium x')
+ax2.set_title(r'$x_n$ at Equilibrium')
 ax2.set_ylim(0,1)
-ax2.set_xlabel('Generations')
-ax2.set_ylabel("%ofMax population")
+ax2.set_xlabel('n')
+ax2.set_ylabel("$x_n$")
 r0 = 3.0002
 N0 = 50
 t0 = np.arange(0,N0,1)
