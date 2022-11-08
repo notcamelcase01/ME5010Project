@@ -1,5 +1,2 @@
-*
-
-
-!.gitignore
-!main.tex
+/venv
+/.idea
