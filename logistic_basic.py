@@ -10,45 +10,34 @@ def logistic(r, x):
 
 
 
-fig2, ax1 = plt.subplots(1, 1, figsize=(7, 6))
+fig2, ax1 = plt.subplots(2, 2, figsize=(16, 6))
 
 
-N0 = 60
+N0 = 50
 t0 = np.arange(0,N0,1)
 init_pop = 0.01
-r0 = [2,3,4]
-for r in r0:
-    x = init_pop*np.ones(len(t0))
-    for i in range(len(t0)-1):
-        x[i+1] = logistic(r,x[i])
 
-    ax1.plot(t0,x,label= "r = {r}".format(r=r))
+x = init_pop*np.ones(len(t0))
+r = 2
+for i in range(len(t0)-1):
+    x[i+1] = logistic(r,x[i])
+ax1[0,0].plot(t0,x,'-o',label= "Period 1 at r = {r} < 3".format(r=r))
+r = 3.1
+for i in range(len(t0)-1):
+    x[i+1] = logistic(r,x[i])
+ax1[0,1].plot(t0,x,'-o',label= "Period 2 at $r_1$ = {r}".format(r=r))
+r = 3.49
+for i in range(len(t0)-1):
+    x[i+1] = logistic(r,x[i])
+ax1[1,0].plot(t0,x,'-o',label= "Period 4 at $r_2$ = {r}".format(r=r))
+r = 3.560
+for i in range(len(t0)-1):
+    x[i+1] = logistic(r,x[i])
+ax1[1,1].plot(t0,x,'-o',label= "Period 8 at $r_3$ = {r}".format(r=r))
+fig2.suptitle("Demonstration of period doubling, Showing $r_0$ , $r_1$ , $r_2$ , $r_3$")
+ax1[0,0].legend()
+ax1[1,0].legend()
+ax1[0,1].legend()
+ax1[1,1].legend()
 
-plt.legend()
-
-ax1.set_title(r'Equilibrium $x_n$ for different $r$')
-ax1.set_ylim(0, 1)
-ax1.set_xlabel(r'$n$')
-ax1.set_ylabel(r'$x_{n}$')
-
-
-
-fig, ax2 = plt.subplots(1, 1, figsize=(7, 6))
-
-xn = np.linspace(0,1,100)
-xn4 = logistic(4,xn)
-
-xn1 = logistic(1,xn)
-xn_5 = logistic(.5,xn)
-
-ax2.plot(xn,xn4,label="r = 4")
-ax2.plot(xn,xn1,label="r = 1")
-ax2.plot(xn,xn_5,label="r = .5")
-
-ax2.set_title(r'$x_{n+1}$ vs $x_n$')
-ax2.set_ylim(0, 1)
-ax2.set_xlabel(r'$x_n$')
-ax2.set_ylabel(r'$x_{n+1}$')
-
-plt.legend()
 plt.show()
