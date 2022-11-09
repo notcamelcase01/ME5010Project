@@ -5,7 +5,7 @@ plt.style.use('dark_background')
 def logistic(r, x):
     return r * x * (1 - x)
 
-n = 10000
+n = 1000000
 r = np.linspace(2.5, 4.0, n)
 
 iterations = 1000
