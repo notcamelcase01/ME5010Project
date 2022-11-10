@@ -292,7 +292,7 @@ random.seed(3)
 print(random.uniform(0,1))
 \end{lstlisting}
 
-Which gives output as $0.23796462709189137$ in both cases.You see for same seed python generates same random number.
+Which gives output as $0.23796462709189137$ in both cases. You see for same seed python generates same random number.
 \newpage
 
 \subsection{Methodology}
@@ -310,7 +310,7 @@ But before we go an code our PRNG we should remember that logistic map collapses
     &4x_0(1-x_0) = 1 \nonumber \\
     &4x(1-x) = x \nonumber
 \end{align}
-From above equation we get that logistic map will fail to generate pseudo-random numbers if $x$ gets to any of these rational values, $[0 , 0.25 , 0.5 , 0.75 , 1 ]$. Observe that 0,0.5 and 1 logistic map collapses(r = 4) and for .75 and .25 it attains value of .75
+From above equations we get that logistic map will fail to generate pseudo-random numbers if $x$ gets to any of these rational values, $[0 , 0.25 , 0.5 , 0.75 , 1 ]$. Observe that at 0,0.5 and 1 logistic map collapses(r = 4) and for .75 and .25 it attains value of .75
 
 \begin{figure}[!h]
     \centering
