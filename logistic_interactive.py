@@ -1,15 +1,18 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.widgets import Slider,TextBox
+from numba import jit
+
 plt.style.use('dark_background')
 
 
 def logistic(r, x):
     return r * x * (1 - x)
 
+@jit(nopython=True)
 def getf(N0,x0,r0):
     for i in range(N0-1):
-        x0[i+1] = logistic(r0, x0[i])
+        x0[i+1] = r0*x0[i]*(1-x0[i])
     return x0
 
 
@@ -35,7 +38,7 @@ ax2.set_ylabel("$x_n$")
 r0 = 3.0002
 N0 = 50
 t0 = np.arange(0,N0,1)
-init_pop = 0.01
+init_pop = 0.25
 
 
 line, = ax2.plot(t0, getf(N0,init_pop*np.ones(N0),r0),'-o')
