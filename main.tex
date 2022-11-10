@@ -126,10 +126,10 @@ In this section we will see why actually solution starts oscillating between mul
 For convergence, we will try to find solution of the following equation.
 \begin{align}
    & fof_r = x  \nonumber\\
-   & x(r^2x^2 - (r^2+r)x+(1+r)) = 0 \nonumber
+   & x(rx-r+1)(r^2x^2 - (r^2+r)x+(1+r)) = 0 \nonumber
 \end{align}
 
-Solving and simplifying this equation we get three solution 0 and other two solutions are roots of the following equation,
+Solving and simplifying this equation we get two other solutions which are roots of the following equation,
 \begin{align}
 & r^2x^2 - (r^2+r)x+(1+r) = 0 \nonumber \\
 & x^2 - (1+\frac{1}{r})x + \frac{1}{r^2} + \frac{1}{r} = 0
@@ -137,28 +137,23 @@ Solving and simplifying this equation we get three solution 0 and other two solu
 
 
 If $q_1$ and $q_2$ are solutions of the above equation then they can be real if
-
 \begin{equation}
     (\frac{r+1}{r}) \geq \frac{4(1+r)}{r^2} \nonumber
 \end{equation}
-
-
 This on simplification leading to \newline
 
 $r \geq 3$. This makes sense because cycle of period 2 exist after r = 3 \newline
 Again to find where equilibrium is attracted to we will find slope of $f'_r(q_1)f'_r(q_2)$ and find values of r for which it's slope $\in [-1,1]$ where $f'_r = r(1-2x)$
-
 \begin{align}
 f'_r(q_1)f'_r(q_2) &= r^2(1 - 2q_1)(1 - 2q_2) \nonumber \\
  &= r^2(1 - 2(q_1+q_2) + 4q_1q_2) \nonumber
 \end{align}
 
 Using (1) in this equation
-
 \begin{equation}
 f'_r(q_1)f'_r(q_2) = -r^2 + 2r + 4
 \end{equation}
-
+We will use same logic that absolute value of slope should be less than 1, for a point to act as an attractor. (That is solution will converge to this point). Here two points ($q_1$,$q_2$) as attractor means solution will converge to two points and hence period doubling.
 \newpage
 
 Equation (2) is 1 when $r = 3$, and for $r > 3$  it decreases and reaches value of -1 when $r = 1 + \sqrt[]{6} = 3.449..$
