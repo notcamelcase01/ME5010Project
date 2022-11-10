@@ -118,28 +118,22 @@ In fact, as r continues to increase after 3, $x_n$ converges to a permanent osci
 \subsection{Period Doubling}
 \raggedright
 In this section we will see why actually solution starts oscillating between multiple points and doubles with r.
-\begin{equation}
-    f_r = rx(1-x) \nonumber
-\end{equation}
-\begin{equation}
-    fof_r = rf_r(1-f_r) \nonumber
-\end{equation}
+\begin{align}
+    f_r &= rx(1-x) \nonumber  \\
+    fof_r &= rf_r(1-f_r) \nonumber
+\end{align}
 
 For convergence, we will try to find solution of the following equation.
-\begin{equation}
-     fof_r = x \nonumber
-\end{equation}
-\begin{equation}
-    x(r^2x^2 - (r^2+r)x+(1+r)) = 0 \nonumber
-\end{equation}
+\begin{align}
+   & fof_r = x  \nonumber\\
+   & x(r^2x^2 - (r^2+r)x+(1+r)) = 0 \nonumber
+\end{align}
 
-Solving and simplifying this equation we get three solution 0 and other two solutions are roots of the following equation, \newline
-\begin{equation}
-r^2x^2 - (r^2+r)x+(1+r) = 0 \nonumber
-\end{equation}
-\begin{equation}
-x^2 - (1+\frac{1}{r})x + \frac{1}{r^2} + \frac{1}{r} = 0
-\end{equation}
+Solving and simplifying this equation we get three solution 0 and other two solutions are roots of the following equation,
+\begin{align}
+& r^2x^2 - (r^2+r)x+(1+r) = 0 \nonumber \\
+& x^2 - (1+\frac{1}{r})x + \frac{1}{r^2} + \frac{1}{r} = 0
+\end{align}
 
 
 If $q_1$ and $q_2$ are solutions of the above equation then they can be real if
@@ -232,5 +226,47 @@ From this Diagram we could find,
     \label{fig:my_label5}
 \end{figure}
 
+So what happens if we keep increasing the period, Period at any r can be given by $2^n$, for $r_3$ period is 8.
+
+What about $r_{20}$ ? Graphically it becomes impossible to do this on my computer. Just to give you an idea currently I could zoom to x32 and perhaps I can do it to x64(which would need me to plot 1 billion points) however $r_{20}$ requires x1048576 zoom-able graph so I can read data points.
+\newline
+
+Even doing it analytically is tedious like, it's exactly how I did it for $r_2$ for $r_n$ we would have to evaluate $fofofof..ntimesf_r = x$ then obtain its roots in form of r and substitute in $|f'_r(q_1)f'_r(q_2)...f'_r(q_n)| < 1$ then check for what r this polynomial absolute values is more than one.\footnote[1]{I am still working on to find a simpler analytical way but I have failed to find anything for now.}
+\newline
+
+Although it is intuitive and seen from data points that $r_n$ is converging to a certain value. \newline
+
+$r_\infty \to 3.5699456....$\footnote[2]{https://documents.uow.edu.au/~mnelson/teaching.dir/discrete.dir/part4.pdf}
+\newline
+
+After $r_\infty$ there is no period doubling although it have some regions where period becomes 3 ($r \approx 3.843$). When r reaches 4 the map becomes completely  chaotic a-periodic.
+\newpage
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=.45]{images/period3ing.png}
+    \caption{Period of 3 at r ~ 3.843}
+    \label{fig:my_label6}
+\end{figure}
+
+\begin{figure}[!h]
+    \centering
+    \includegraphics[scale=.45]{images/rinfi.png}
+    \caption{State of map around $r_{\infty}$ (Zoomed in)}
+    \label{fig:my_label7}
+\end{figure}
+
+A summary of what information we know till now,
+
+\begin{itemize}
+  \item $r < 1$, solution approaches to 0 quickly.
+  \item $r \in [1,3]$ Solution converges to $1-\frac{1}{r}$
+  \item $r\in (3,r_{\infty})$ period doubling is observed.
+  \item $r\in (r_{\infty},4)$ a-periodicity with windows  of 3 period  cycles is observed.
+  \item $r=4$ is map goes deep into chaos and this is the region we are most interested in to generate randomness
+\end{itemize}
+\newpage
+
+\section{Pseudo-Random Number Generator}
 \end{document}
 
