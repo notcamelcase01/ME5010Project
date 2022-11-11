@@ -43,12 +43,13 @@ def logistic(r, x):
 def normalizer(x):
     return np.arccos(1-2*x)/np.pi
 
+
 @jit(nopython=True)
 def run(n, initial, r):
     x = [r * initial * (1 - initial)]
-    for _ in range(n+100):
+    for _ in range(n+1000):
         x.append(r * x[-1] * (1 - x[-1]))
-    return np.array(x[101:])
+    return np.array(x[1001:])
 
 def lprandom_real(n,seed = None):
     run(1,.2,4) #warming up njit
@@ -56,14 +57,16 @@ def lprandom_real(n,seed = None):
         seed =  ScaleX(GetTimeSeed())
     if seed in FORBIDDEN_NUMBER:
         seed = seed + 0.001
-    return normalizer(run(n,seed,3.99)),seed
+    return normalizer(run(n,seed,4)),seed
 
-def Get_Single_Rando(seed = None):
-    run(1,.2,4)  #warming up njit
+def lprandom_real_un(n,seed = None):
+    run(1,.2,4) #warming up njit
     if seed is None:
         seed =  ScaleX(GetTimeSeed())
     if seed in FORBIDDEN_NUMBER:
         seed = seed + 0.001
-    return normalizer(run(1000,seed,3.99))[int(GetTimeSeed()*1000)]
+    return run(n,seed,4),seed
+
+
 
 

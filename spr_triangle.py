@@ -3,10 +3,13 @@ import matplotlib.pyplot as plt
 import numpy as np
 plt.style.use('dark_background')
 
-n = 10000
-fig, (ax1,ax2) = plt.subplots(1, 2, figsize=(16, 9))
-xrng, seed = lprng.lprandom_real(n)
-sampl = np.random.uniform(low=0., high=1, size=(n,))
+n = 100000
+n2 = 10000
+n3 = 1000
+n4 = 100
+fig, axx = plt.subplots(2, 2, figsize=(9, 9))
+xrng = np.random.uniform(low=0., high=1, size=(n,))
+sampl, seed = lprng.lprandom_real_un(n2)
 def plot(points,ax):
     """
     Plots the points using matplotlib.
@@ -52,11 +55,19 @@ def sierpinski(n,xar,ax):
     plot(points,ax)
 
 
-sierpinski(n,xrng,ax1)
-sierpinski(n,sampl,ax2)
-ax1.set_title("LOGISTIC")
-ax2.set_title("NUMPY RAND")
-ax1.set_aspect('equal', adjustable='box')
-ax2.set_aspect('equal', adjustable='box')
+sierpinski(n,xrng,axx[1,1])
+sierpinski(n2,xrng,axx[1,0])
+sierpinski(n3,xrng,axx[0,1])
+sierpinski(n4,xrng,axx[0,0])
+
+axx[1,1].set_title("100000 points")
+axx[1,0].set_title("10000 points")
+axx[0,1].set_title("1000 points")
+axx[0,0].set_title("100 points")
+
+axx[0,0].set_aspect('equal', adjustable='box')
+axx[0,1].set_aspect('equal', adjustable='box')
+axx[1,0].set_aspect('equal', adjustable='box')
+axx[1,1].set_aspect('equal', adjustable='box')
 
 plt.show()

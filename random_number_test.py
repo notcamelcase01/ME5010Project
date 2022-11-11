@@ -2,12 +2,13 @@ import random
 import numpy as np
 import lprandom as lprng
 import matplotlib.pyplot as plt
+import pseudo_random_gen as pnr
 
 plt.style.use('dark_background')
 
 
 N0 = 10000
-xlpr,seed = lprng.lprandom_real(N0)
+xlpr = pnr.get_pnr(N0)
 sampl = np.random.uniform(low=0., high=1, size=(N0,))
 print(len(sampl))
 print(len(xlpr))
