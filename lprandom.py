@@ -1,5 +1,8 @@
 '''
-SEED CANNOT BE 0 OR 1
+DESIGN BY CONTRACT EXPECTATION
+This is done to make program faster by reducing "if checks"
+because I am expecting the user to act according to the following contract
+|||| SEED CANNOT BE 0 OR 1 and should be between 0 and 1 ||||
 '''
 import numpy as np
 import time
@@ -48,19 +51,19 @@ def run(n, initial, r):
     return np.array(x[101:])
 
 def lprandom_real(n,seed = None):
-    run(1,.2,4)
+    run(1,.2,4) #warming up njit
     if seed is None:
         seed =  ScaleX(GetTimeSeed())
     if seed in FORBIDDEN_NUMBER:
         seed = seed + 0.001
-    return normalizer(run(n,seed,4)),seed
+    return normalizer(run(n,seed,3.99)),seed
 
 def Get_Single_Rando(seed = None):
-    run(1,.2,4)
+    run(1,.2,4)  #warming up njit
     if seed is None:
         seed =  ScaleX(GetTimeSeed())
     if seed in FORBIDDEN_NUMBER:
         seed = seed + 0.001
-    return normalizer(run(1000,seed,4))[int(GetTimeSeed()*1000)]
+    return normalizer(run(1000,seed,3.99))[int(GetTimeSeed()*1000)]
 
 
