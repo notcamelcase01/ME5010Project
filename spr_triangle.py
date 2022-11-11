@@ -11,10 +11,7 @@ fig, axx = plt.subplots(2, 2, figsize=(9, 9))
 xrng = np.random.uniform(low=0., high=1, size=(n,))
 sampl, seed = lprng.lprandom_real_un(n2)
 def plot(points,ax):
-    """
-    Plots the points using matplotlib.
-    Points is a list of (x, y) pairs.
-    """
+
 
     xx = [x for (x, y) in points]
     yy = [y for (x, y) in points]
