@@ -8,7 +8,7 @@ plt.style.use('dark_background')
 
 
 N0 = 10000
-xlpr= pnr.get_pnr(N0)
+xlpr= lprng.lprandom_real(n)
 sampl = np.random.uniform(low=0., high=1, size=(N0,))
 print(len(sampl))
 print(len(xlpr))
