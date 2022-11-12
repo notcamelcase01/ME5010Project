@@ -19,8 +19,8 @@ def run(r, x, length):
 def linear_scale_r(val):
     return R_MIN + (R_MAX - R_MIN) * val
 def rnd(seed,num):
-    num = run(seed,0.5 * (num*1000%1+num*100%1), int(200 + 1000 * seed % 32))
-    seed = linear_scale_r(num)
+    num = run(seed,num*100*np.pi%1, int(100+1000 * seed % 13))
+    seed = linear_scale_r(np.cos(num**2*np.pi*5)%1)
     return seed, num
 
 def get_pnr(n):
