@@ -57,7 +57,7 @@ def lprandom_real(n,seed = None):
         seed =  ScaleX(GetTimeSeed())
     if seed in FORBIDDEN_NUMBER:
         seed = seed + 0.001
-    return normalizer(run(n,seed,3.99)),seed
+    return normalizer(run(n,seed,4)),seed
 
 def lprandom_real_un(n,seed = None):
     run(1,.2,4) #warming up njit
@@ -65,7 +65,7 @@ def lprandom_real_un(n,seed = None):
         seed =  ScaleX(GetTimeSeed())
     if seed in FORBIDDEN_NUMBER:
         seed = seed + 0.001
-    return run(n,seed,3.99),seed
+    return run(n,seed,4),seed
 
 
 

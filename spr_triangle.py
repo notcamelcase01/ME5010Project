@@ -8,8 +8,8 @@ n2 = 10000
 n3 = 1000
 n4 = 100
 fig, axx = plt.subplots(2, 2, figsize=(9, 9))
-xrng = np.random.uniform(low=0., high=1, size=(n,))
-sampl, seed = lprng.lprandom_real_un(n2)
+sampl = np.random.uniform(low=0., high=1, size=(n,))
+xrng, seed = lprng.lprandom_real_un(n)
 def plot(points,ax):
 
 
