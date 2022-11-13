@@ -81,4 +81,10 @@ Generation of Barnsley Fern.
 
 ---
 Contributors  :
+- TS Rudramani
+- Nitesh Singh
+- Shyam Sridhar
+- Pawan Kumar
 - notcamecase01
+
+
