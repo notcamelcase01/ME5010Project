@@ -67,6 +67,14 @@ def lprandom_real_un(n,seed = None):
         seed = seed + 0.001
     return run(n,seed,4),seed
 
+def rik(x):
+    return (x * 256).astype(int)
 
-
-
+#for image encryption
+def lprandom_int_0_256(n,seed = None):
+    run(1,.2,4) #warming up njit
+    if seed is None:
+        seed =  ScaleX(GetTimeSeed())
+    if seed in FORBIDDEN_NUMBER:
+        seed = seed + 0.001
+    return rik(normalizer(run(n,seed,4))),seed
