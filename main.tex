@@ -36,7 +36,7 @@ In this project our aim is to explore behaviour of logistic map. It's sensitivit
 \section{Uniformity in Randomness}
 \raggedright
 
-Reason why I use \textbf{pseudo}-random numbers because for exactly same starting conditions or initial values we will have same array of numbers that are deterministic. As a matter of fact even pre-built random number generator in python also gives same array of numbers if we query random numbers with a particular seed or initial parameter.
+Reason why We use \textbf{pseudo}-random numbers because for exactly same starting conditions or initial values we will have same array of numbers that are deterministic. As a matter of fact even pre-built random number generator in python also gives same array of numbers if we query random numbers with a particular seed or initial parameter.
 
 The idea behind generating pseudo-random numbers from such system is their sensitivity  to initial conditions itself. Even change in orders of $10^{-6}$ would generate an entirely different array of numbers. Determining the seed or initial condition is not straight-forward given a state of certain point in future. Moreover, explaining systems that are hypersensitive to initial parameters is forte of Chaos Theory
 
@@ -170,7 +170,7 @@ Like this at certain r's we will get period doubling first three are,
     r_2 &= 1 + \sqrt[]{6} \nonumber \\
     r_3 &= 3.544... \nonumber
 \end{align}
-This is also called cascade of period doubling, Note  $r_3$ is not evaluated in above calculation I took it from graph I made
+This is also called cascade of period doubling, Note  $r_3$ is not evaluated in above calculation we took it from graph we made
 
 Let us define a term which looks like
 \begin{equation}
@@ -225,10 +225,10 @@ From this Diagram we could find,
 
 So what happens if we keep increasing the period, Period at any r can be given by $2^n$, for $r_3$ period is 8.
 
-What about $r_{20}$ ? Graphically it becomes impossible to do this on my computer. Just to give you an idea currently I could zoom to x32 and perhaps I can do it to x64(which would need me to plot 1 billion points) however $r_{20}$ requires x1048576 zoom-able graph so I can read data points.
+What about $r_{20}$ ? Graphically it becomes impossible to do this on my computer. Just to give you an idea currently we could zoom to x32 and perhaps we can do it to x64(which would need us to plot 1 billion points) however $r_{20}$ requires x1048576 zoom-able graph so we can read data points.
 \newline
 
-Even doing it analytically is tedious like, it's exactly how I did it for $r_2$ for $r_n$ we would have to evaluate $fofofof..ntimesf_r = x$ then obtain its roots in form of r and substitute in $|f'_r(q_1)f'_r(q_2)...f'_r(q_n)| < 1$ then check for what r this polynomial absolute values is more than one.\footnote[1]{I am still working on to find a simpler analytical way but I have failed to find anything for now.}
+Even doing it analytically is tedious like, it's exactly how we did it for $r_2$ for $r_n$ we would have to evaluate $fofofof..ntimesf_r = x$ then obtain its roots in form of r and substitute in $|f'_r(q_1)f'_r(q_2)...f'_r(q_n)| < 1$ then check for what r this polynomial absolute values is more than one.\footnote[1]{we are still working on to find a simpler analytical way.}
 \newline
 
 Although it is intuitive and seen from data points that $r_n$ is converging to a certain value. \newline
@@ -273,12 +273,12 @@ Idea is very simple,
 \begin{equation}
     x_{n+1} = rx_n(1-x_n) \nonumber
 \end{equation}
-This equation will give us series of numbers. Again I will repeat the numbers generated are not truly random they are still generated from deterministic algorithm and thus they are deterministic.
+This equation will give us series of numbers. Again we will repeat the numbers generated are not truly random they are still generated from deterministic algorithm and thus they are deterministic.
 \subsection{Why Pseudo ?}
 True random numbers are completely \textbf{irreproducible} while pseudo-random numbers are reproducible, Given the same initial parameters(seed) the algorithm outputs same sets of numbers. The idea is these pseudo-random numbers statistically shows the properties of random numbers and thus could be used in calculations.
 \newline
 
-These initial parameters which I talked above are often referred to as seeds. For logistic map we will use initial $x_0$ as seed. So for same seed we will get output of same  numbers which will look like random numbers. Infact, even python function giving "random" numbers uses similar algorithm , so even they would give repeating pattern for same seed.
+These initial parameters which we talked above are often referred to as seeds. For logistic map we will use initial $x_0$ as seed. So for same seed we will get output of same  numbers which will look like random numbers. Infact, even python function giving "random" numbers uses similar algorithm , so even they would give repeating pattern for same seed.
 
 \begin{lstlisting}
 # importing random module
@@ -353,7 +353,7 @@ Pesudo-random numbers generated from logistic map at r=4 generate this fractal t
 
 \begin{figure}[!h]
     \centering
-    \includegraphics[scale=.4]{images/ilmtri.png}
+    \includegraphics[scale=.38]{images/ilmtri.png}
     \caption{Sierpinski Triangle for different points.(Logistic map)}
     \label{fig:my_label11}
 \end{figure}
@@ -383,7 +383,7 @@ Due to how XOR operator works we can get back original pixel by XORing decrypted
     \caption{We differed seed by just $10^{-6}$ and image decryption failed}
     \label{fig:my_labelVenti}
 \end{figure}
-
+\footnotetext{Image Credit : Hoyoverse}
 This not only demonstrate how chaotic maps like logistic equation can be used for data encryption but also shows how sensitive these maps are to initial values.
 \begin{quote}
 Exact Present can determine exact future but approximate present cannot determine approximate future.  (Fundamentals of Chaos Theory)
@@ -406,7 +406,7 @@ Altough our logistic based PRNG is not the best, Take this for example. Generati
     \label{fig:my_label13}
 \end{figure}
 
-But I adjusted the pseudo number generation and used r as seed itself to get this.
+But after we adjusted the pseudo number generation and used r as seed itself for generating each prn to get this.
 
 \begin{figure}[!h]
     \centering
@@ -424,14 +424,20 @@ Nature is chaotic yet so disciplined.
 Generator;
 		1993
 	\bibitem{r2}
+	   Jongseok Choi, Seonhee Seok, Hwajeong Seo and Howon Kim,
+		``A fast ARX model-based image encryption scheme;
+		2016
+		\bibitem{r3}
 		Queen Marry University of London,
 		\url{https://webspace.maths.qmul.ac.uk/s.r.bullett/cf_chapter3.pdf};
-	\bibitem{r3}
+	\bibitem{r4}
 		Veritasium youtube video,
 		\url{https://www.youtube.com/watch?v=ovJcsL7vyrk&ab_channel=Veritasium};
 
-		\bibitem{r4}
-	    Code is written in \textbf{PYTHON}, Link to my Github Repository.  \url{https://github.com/notcamelcase01/ME5010Project}
+		\bibitem{r5}
+	    Code is written in \textbf{python and matlab}, Link to Github Repository.  \url{https://github.com/notcamelcase01/ME5010Project}
+
+
 \end{thebibliography}
 
 \end{document}

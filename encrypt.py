@@ -5,7 +5,7 @@ from PIL import Image
 import matplotlib.pyplot as plt
 plt.style.use('dark_background')
 
-fig, (ax1,ax2,ax3,ax4) = plt.subplots(1, 4, figsize=(16, 9))
+fig, (ax1,ax2,ax3,ax4) = plt.subplots(1, 4, figsize=(16, 7))
 
 
 im1 = Image.open(r"images/yae.PNG").convert('L')
