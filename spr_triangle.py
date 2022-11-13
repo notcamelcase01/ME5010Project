@@ -16,7 +16,7 @@ def plot(points,ax):
     xx = [x for (x, y) in points]
     yy = [y for (x, y) in points]
 
-    ax.plot(xx, yy, 'w.')
+    ax.plot(xx, yy, 'w.',markersize = .5)
 
 
 
