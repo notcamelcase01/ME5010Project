@@ -86,6 +86,10 @@ Generation of Barnsley Fern.
 Animated cobweb graph for logistic map
 <img src="https://raw.githubusercontent.com/notcamelcase01/ME5010Project/master/images/r%3D3.97.png"  width="50%" height="50%" /> 
 
+7) **[`logistic.m`](https://github.com/notcamelcase01/ME5010Project/blob/master/logistic.m)**  
+Logistic map to model a business model
+<img src="https://raw.githubusercontent.com/notcamelcase01/ME5010Project/master/images/lmodel1.PNG"  width="50%" height="50%" /> 
+
 ---
 Contributors  :
 - TS Rudramani
