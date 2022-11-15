@@ -86,9 +86,17 @@ Generation of Barnsley Fern.
 Animated cobweb graph for logistic map
 <img src="https://raw.githubusercontent.com/notcamelcase01/ME5010Project/master/images/r%3D3.97.png"  width="50%" height="50%" /> 
 
+---
+
 7) **[`logistic.m`](https://github.com/notcamelcase01/ME5010Project/blob/master/logistic.m)**  
 Logistic map to model a business model
 <img src="https://raw.githubusercontent.com/notcamelcase01/ME5010Project/master/images/lmodel1.PNG"  width="50%" height="50%" /> 
+
+---
+
+8) **[`generalizedVerhulst.m`](https://github.com/notcamelcase01/ME5010Project/blob/master/generalizedVerhulst.m)**  
+Generalized logistic equation
+<img src="https://raw.githubusercontent.com/notcamelcase01/ME5010Project/master/images/Capture2.PNG"  width="50%" height="50%" /> 
 
 ---
 Contributors  :
@@ -96,6 +104,6 @@ Contributors  :
 - Nitesh Singh
 - Shyam Sridhar
 - Pawan Kumar
-- notcamecase01
+- notcamecase01 (Aman)
 
 
