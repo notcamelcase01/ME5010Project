@@ -13,7 +13,7 @@ $\mathbf{x_{n+1} = rx_n(1-x_n)}$
 	-  `numpy` : `pip install numpy` (Handling arrays)
 	- `matplotlin` : `pip install matplotlib` (Plotting)
 	- `numba` : `pip install numba`(Speed optimizer)
-
+- Matlab
 
 
 #### Code File Description
